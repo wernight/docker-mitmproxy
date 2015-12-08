@@ -1,6 +1,3 @@
-Containerized mitmproxy
-=======================
-
 [![](https://badge.imagelayers.io/wernight/mitmproxy:latest.svg)](https://imagelayers.io/?images=wernight/mitmproxy:latest 'Get your own badge on imagelayers.io')
 
 Containerized [mitmproxy](https://mitmproxy.org/), man-in-the-middle proxy:
