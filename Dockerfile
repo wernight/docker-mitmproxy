@@ -21,7 +21,7 @@ RUN apk add --update \
     && wget -qO- https://bootstrap.pypa.io/get-pip.py | python - \
     && touch /usr/local/bin/xclip \
     && chmod +x /usr/local/bin/xclip \
-    && LDFLAGS=-L/lib pip install mitmproxy \
+    && LDFLAGS=-L/lib pip install mitmproxy==0.15 \
     && apk del --purge \
         g++ \
         libffi-dev \
