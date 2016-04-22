@@ -1,9 +1,10 @@
-FROM alpine:3.2
+FROM alpine:3.3
 
 # Note: We add a dummy xclip because we don't want to support clipboard
 # from within the container.
-RUN apk add --update \
+RUN apk add --no-cache \
         g++ \
+        py-pip \
         libffi \
         libffi-dev \
         libjpeg-turbo \
@@ -18,12 +19,10 @@ RUN apk add --update \
         python-dev \
         zlib \
         zlib-dev \
-    && wget -qO- https://bootstrap.pypa.io/get-pip.py | python - \
-    && touch /usr/local/bin/xclip \
-    && chmod +x /usr/local/bin/xclip \
     && LDFLAGS=-L/lib pip install mitmproxy \
     && apk del --purge \
         g++ \
+        py-pip \
         libffi-dev \
         libjpeg-turbo-dev \
         libxml2-dev \
